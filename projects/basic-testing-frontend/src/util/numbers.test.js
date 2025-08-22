@@ -34,7 +34,12 @@ describe('cleanNumbers()', () => {
     const numberValues = ['1', '2'];
     const cleanedNumbers = cleanNumbers(numberValues);
     expect(cleanedNumbers[0]).toBeTypeOf('number');
-    expect(cleanedNumbers[1]).toBeTypeOf('number');
+  });
+  it('deve retornar um array de números se um array de strings numéricas for fornecido', () => {
+    // should return an array of numbers if an array of numeric strings is provided
+    const numberValues = ['1', '2'];
+    const cleanedNumbers = cleanNumbers(numberValues);
+    expect(cleanedNumbers).toEqual([1,2]);
   });
   it('deve retornar um array vazio se um array vazio for fornecido', () => {
     // should return an empty array if an empty array is provided
