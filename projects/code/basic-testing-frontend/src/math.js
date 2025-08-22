@@ -1,3 +1,5 @@
+import { cleanNumbers } from "./util/numbers.js";
+
 export function add(numbers) {
   let sum = 0;
   // Throw new Error('Argumento deve ser um array');
@@ -6,4 +8,15 @@ export function add(numbers) {
     sum += +number;
   }
   return sum;
+}
+
+export function calculateResult(numberValues){
+  let result
+  try {
+    const numbers = cleanNumbers(numberValues);
+    result = add(numbers).toString();
+  } catch (error) {
+    return error.message;
+  }
+  return result;
 }
